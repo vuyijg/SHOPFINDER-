@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SHOPFINDER - Worldwide Best Deals</title>
+<style>
+body{font-family:Arial;background:#0f172a;color:white;margin:0;padding:20px}
+.header{background:linear-gradient(90deg,#7c3aed,#ec4899);padding:30px;text-align:center;border-radius:15px}
+h1{margin:0;font-size:28px}
+.search{margin:20px 0;display:flex;gap:10px}
+input{flex:1;padding:15px;border-radius:10px;border:none;font-size:16px}
+button{padding:15px 25px;background:#7c3aed;color:white;border:none;border-radius:10px;font-weight:bold}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:15px;margin-top:20px}
+.card{background:#1e293b;padding:20px;border-radius:15px;border:1px solid #334155}
+.card h3{color:#a78bfa;margin-top:0}
+.price{color:#10b981;font-weight:bold;font-size:20px}
+.link{display:block;margin-top:10px;background:#ec4899;color:white;text-align:center;padding:12px;border-radius:8px;text-decoration:none}
+</style>
+</head>
+<body>
+<div class="header">
+<h1>🛒 SHOPFINDER -</h1>
+<p>Shop finder worldwide - best deals finder</p>
+<p>By Vuyi</p>
+</div>
+
+<div class="search">
+<input id="q" placeholder="Search product... iPhone, Nike, Laptop">
+<button onclick="search()">Search Deals</button>
+</div>
+
+<div class="grid" id="grid">
+<div class="card"><h3>🔥 Amazon Best Deals</h3><p>Find worldwide shipping</p><div class="price">Up to 70% OFF</div><a class="link" href="https://www.amazon.com/s?k=" target="_blank">Open Amazon</a></div>
+<div class="card"><h3>💙 eBay Global</h3><p>Auctions & Buy Now worldwide</p><div class="price">Lowest Prices</div><a class="link" href="https://www.ebay.com/sch/i.html?_nkw=" target="_blank">Open eBay</a></div>
+<div class="card"><h3>🟧 AliExpress</h3><p>China direct worldwide free shipping</p><div class="price">From $0.99</div><a class="link" href="https://www.aliexpress.com/w/wholesale-" target="_blank">Open AliExpress</a></div>
+<div class="card"><h3>⚡ Temu Trending</h3><p>Viral products worldwide</p><div class="price">90% OFF</div><a class="link" href="https://www.temu.com/search_result.html?search_key=" target="_blank">Open Temu</a></div>
+</div>
+
+<script>
+function search(){
+let q=document.getElementById('q').value;
+if(!q){alert('Type product name');return;}
+let grid=document.getElementById('grid');
+grid.innerHTML=`
+<div class="card"><h3>🔍 ${q} on Amazon</h3><div class="price">Best Price</div><a class="link" href="https://www.amazon.com/s?k=${q}" target="_blank">View on Amazon</a></div>
+<div class="card"><h3>🔍 ${q} on eBay</h3><div class="price">Auction Deals</div><a class="link" href="https://www.ebay.com/sch/i.html?_nkw=${q}" target="_blank">View on eBay</a></div>
+<div class="card"><h3>🔍 ${q} on AliExpress</h3><div class="price">Free Shipping</div><a class="link" href="https://www.aliexpress.com/w/wholesale-${q}.html" target="_blank">View on AliExpress</a></div>
+<div class="card"><h3>🔍 ${q} on Google Shopping</h3><div class="price">Compare All</div><a class="link" href="https://www.google.com/search?tbm=shop&q=${q}" target="_blank">Compare Prices</a></div>
+`;
+}
+</script>
+</body>
+  </html>
